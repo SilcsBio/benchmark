@@ -21,6 +21,6 @@ export GMX_MAXBACKUP=-1
 $GMXDIR/gmx grompp -f emin.mdp -c 3pbl.pdb -p 3pbl.top -o min -r 3pbl.pdb -maxwarn 4
 $mdrun -deffnm min -c min.pdb
 
-$GMXDIR/gmx grompp -f equil.mdp -c min.pdb -p 3pbl.top -o equil -r 3pbl.pdb -maxwarn 4
+$GMXDIR/gmx grompp -f equil.mdp -c min.pdb -p 3pbl.top -o equil -r 3pbl.pdb -maxwarn 4 -n prot_lipid_silcs.ndx
 $mdrun -deffnm equil -c equil.pdb
 
