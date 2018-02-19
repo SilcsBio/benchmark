@@ -1,0 +1,9 @@
+benchmark.out
+mdout.mdp
+*.log
+*.tpr
+*.trr
+*.edr
+*.xtc
+min.pdb
+equil.pdb

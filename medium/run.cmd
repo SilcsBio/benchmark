@@ -10,7 +10,7 @@
 
 # please edit these to match your setting
 nproc=8                                 # number of cpu cores to use
-GMXDIR=/shared/apps/gromacs/2018.1      # path to gmx
+GMXDIR=/shared/apps/gromacs/2018.1/bin  # path to gmx
 mdrun="${GMXDIR}/gmx mdrun -nt $nproc"  # gmx mdrun command
 
 # do not edit below
@@ -18,9 +18,9 @@ env
 nvidia-smi
 export GMX_MAXBACKUP=-1
 
-$GMXDIR/gmx grompp -f emin.mdp -c p38a.pdb -p p38a.top -o min
+$GMXDIR/gmx grompp -f emin.mdp -c p38a.pdb -p p38a.top -o min -r p38a.pdb -maxwarn 4
 $mdrun -deffnm min -c min.pdb
 
-$GMXDIR/gmx grompp -f equil.mdp -c min.pdb -p p38a.top -o equil
+$GMXDIR/gmx grompp -f equil.mdp -c min.pdb -p p38a.top -o equil -r p38a.pdb -maxwarn 4
 $mdrun -deffnm equil -c equil.pdb
 
