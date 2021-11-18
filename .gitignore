@@ -8,3 +8,4 @@ mdout.mdp
 min.pdb
 equil.pdb
 *.cpt
+*/.*
